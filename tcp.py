@@ -5,7 +5,7 @@ TIMEOUT = 2
 conf.verb = 0
 port=23
 for ip in range(140, 256):
-    packet = IP(dst="172.16.219." + str(ip), ttl=20)/TCP(dport=str(port))
+    packet = IP(dst="172.16.219." + str(ip), ttl=20)/TCP(dport=port)
     reply = sr1(packet, timeout=TIMEOUT)
     if not (reply is None):
          print reply.dst, "is online"
