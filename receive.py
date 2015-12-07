@@ -13,8 +13,7 @@ def my_form_post():
 
     ip = request.form('ip')
     select = request.form.get('request')
-    processed_text = text.upper()
-    return processed_text
+    select +".py "+ip
 
 if __name__ == '__main__':
     app.run(debug=True)
