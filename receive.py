@@ -11,10 +11,10 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
 
-    ip = request.form['ip']
+    ip = request.form('ip')
     select = request.form.get('request')
     processed_text = text.upper()
     return processed_text
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
