@@ -13,7 +13,7 @@ def my_form_post():
 
     ip = request.form('ip')
     select = request.form.get('request')
-    select +".py "+ip
+    return select +".py "+ip
 
 if __name__ == '__main__':
     app.run(debug=True)
