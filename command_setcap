@@ -1,0 +1,20 @@
+  272  sudo chown infadm:infsec /usr/bin/python_netraw 
+  273  sudo chmod 770 /usr/bin/python_netraw 
+  274  usermod 
+  275  sudo usermod pi -g infsec
+  276  group
+  277  groups
+  278  exit
+  279  groups
+  280  cd environments/Scapy/Scapy/
+  281  lls
+  282  ls
+  283  rm python_netraw 
+  284  python_netraw ping.py 
+  285  getcap `which python_netraw`
+  286  which python_netraw 
+  287  sudo setcap cap_net_raw=eip /usr/bin/python_netraw 
+  288  python_netraw ping.py 
+  289  history | tail -20 >> ~/
+  290  history | tail -20 >> ~/ command_setcap
+  291  history | tail -20 >> ~/command_setcap
