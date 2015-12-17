@@ -21,7 +21,7 @@ def my_form_post():
     select = request.form.get('request')
     
     
-@app.route('/generate')
+@app.route('/Scriptje')
 def run_script(id):
     subprocess.call([select, ip])
     background_scripts[id] = True
