@@ -10,10 +10,6 @@ ip ='192.168.0.1'
 
 app = Flask(__name__)
 
-def run_script(id):
-    subprocess.call([select, ip])
-    background_scripts[id] = True
-
 @app.route('/')
 def my_form():
     return render_template("index.html")
@@ -26,11 +22,10 @@ def my_form_post():
     
     
 @app.route('/generate')
-def generate():
-    id = str(uuid.uuid4())
-    background_scripts[id] = False
-    threading.Thread(target=lambda: run_script(id)).start()
-    return render_template('processing.html', id=id)
+def run_script(id):
+    subprocess.call([select, ip])
+    background_scripts[id] = True
+
 
 
 
