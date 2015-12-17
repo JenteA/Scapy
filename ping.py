@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from scapy.all import *
 
-def ping();
+def ping():
   TIMEOUT = 2
   conf.verb = 0
   ip = "192.168.1.125"

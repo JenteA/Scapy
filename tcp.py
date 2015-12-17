@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from scapy.all import *
-def tcpping();
+def tcpping():
   TIMEOUT = 2
   conf.verb = 0
   port=23
