@@ -13,5 +13,3 @@ def ping():
   else:
   	print "Timeout waiting for %s" % packet[IP].dst
   return;
-
-ping();
