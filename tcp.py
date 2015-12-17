@@ -12,4 +12,5 @@ def tcpping():
        print reply.src, "is online"
   else:
        print "Timeout waiting for %s" % packet[IP].dst
-return;
+  return;
+tcpping();
