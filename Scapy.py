@@ -10,6 +10,16 @@ ip ='192.168.0.1'
 
 app = Flask(__name__)
 
+@app.after_request
+def add_header(response):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
+
 @app.route('/')
 def my_form():
     return render_template("index.html")
@@ -19,7 +29,7 @@ def my_form_post():
 
     ip = request.form('ip')
     select = request.form.get('request')
-    
+    print(ip);
     
 @app.route('/Scriptje')
 def run_script(id):
