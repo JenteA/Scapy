@@ -9,6 +9,6 @@ def tcpping(ip, port):
   packet = IP(dst=ip, ttl=20)/TCP(dport=port)
   reply = sr1(packet, timeout=TIMEOUT)
   if not (reply is None):
-       return reply.src, "is online"
+       return reply.src, "is listening to", port
   else:
        return "Timeout waiting for %s" % packet[IP].dst

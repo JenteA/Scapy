@@ -22,15 +22,17 @@ def my_form():
 def my_form_post():
     processText = ''
     ip = request.form['ip']
-    ip = request.form['port']
+    port = request.form['port']
     choice = request.form['request']
     print(ip)
     subprocess.call("echo `pwd`>>succes", shell=True)
     if choice == 'ping':
        processText = ping(ip)
     if choice == 'tcp':
+        if port != '':
+	   port = int(port)
 	processText = tcpping(ip, port)
-    if choice == 'arp'
+    if choice == 'arp':
        processText = arp(ip)
     else:
         print('nothing to do')
