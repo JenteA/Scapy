@@ -7,7 +7,7 @@ def arp(ip):
   #for ip in range(140, 256):
   packet = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip)
   reply, unreply = srp(packet, timeout=TIMEOUT, iface="eth0")
-  if not (reply is None):
-       return ip, "is online"
+  if len(reply) > 0:
+       return reply[0][0].getlayer(ARP).pdst, "is online"
   else:
        return "Timeout waiting for %s" % packet[ARP].pdst
