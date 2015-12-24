@@ -10,8 +10,7 @@ def ping(ip):
   packet = IP(dst=ip, ttl=20)/ICMP()
   reply = sr1(packet, timeout=TIMEOUT)
   if not (reply is None):
-  	print reply.src, "is online"
+  	return reply.src, "is online"
   else:
-  	print "Timeout waiting for %s" % packet[IP].dst
-  return;
+  	return "Timeout waiting for %s" % packet[IP].dst
 

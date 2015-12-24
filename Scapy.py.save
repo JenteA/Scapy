@@ -1,6 +1,4 @@
 from __future__ import print_function
-import subprocess
-import os
 import sys
 from ping import ping
 from tcp import tcpping 
@@ -14,16 +12,24 @@ app = Flask(__name__)
 
 @app.route('/')
 def my_form():
+    #return redirect(url_for('index.html'))	
+    #return render_template(url_for("index.html"))
     return render_template("index.html")
 
 @app.route('/Scriptje', methods=['POST'])
 def my_form_post():
-    ip = request.form['ip']
-    print(ip)
-    subprocess.call("echo `pwd`>>succes", shell=True)
-    processText = ping(ip)
-    return render_template("index.html", processText=processText)
+    ip = int(request.form['ip'])
+    #select = str(request.form.get['request'])
+    print(ip)    return render_template("index.html")    
+@app.route("/Scriptje")
+def run_script(id):
+    subprocess.call([select, ip])
+    background_scripts[id] = True
+
+
+
+
+print(ip, file=sys.stderr)
 
 if __name__ == '__main__':
-    app.debug = True
     app.run(host='0.0.0.0')
