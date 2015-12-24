@@ -8,7 +8,8 @@ from flask import Flask
 from flask import request
 from flask import render_template, redirect, url_for
 
-ip ='192.168.0.1'
+processText = ''
+ip = ''
 
 app = Flask(__name__)
 
@@ -18,10 +19,17 @@ def my_form():
 
 @app.route('/Scriptje', methods=['POST'])
 def my_form_post():
+    processText = ''
     ip = request.form['ip']
+    choice = request.form['request']
     print(ip)
     subprocess.call("echo `pwd`>>succes", shell=True)
-    processText = ping(ip)
+    if choice == 'ping':
+       processText = ping(ip)
+    if choice == 'tcp':
+	processText = tcpping(ip)
+    else:
+        print('nothing to do')
     return render_template("index.html", processText=processText)
 
 if __name__ == '__main__':
