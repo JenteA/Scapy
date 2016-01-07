@@ -49,7 +49,9 @@
                     </br>
                     <button type="Submit" class="btn btn-lg btn-primary">Verstuur!</button>
                 </form>
-                {{processText}}
+                {% for i in processText %}
+                    {{i}}
+                {% endfor %}
             </div>
         </main>
     </div>
