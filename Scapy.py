@@ -31,17 +31,14 @@ def my_form_post():
     if choice == 'ping':
        processText = ping(ip, delay, nr)
     if choice == 'tcp':
-<<<<<<< HEAD
-	processText = tcpping(ip, port, delay, nr)
+	   processText = tcpping(ip, port, delay, nr)
     if choice == 'arp'
        processText = arp(ip, delay, nr)
-=======
         if port != '':
-	   port = int(port)
-	processText = tcpping(ip, port)
+	       port = int(port)
+	       processText = tcpping(ip, port)
     if choice == 'arp':
        processText = arp(ip)
->>>>>>> ea719aa6fca7627e6898794e9ad151b6b87da866
     else:
         print('nothing to do')
     return render_template("index.html", processText=processText)
