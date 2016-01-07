@@ -27,14 +27,22 @@ def my_form_post():
     delay = request.form['delay']
     nr = request.form['nr']
     print(ip)
+    if delay == '':
+       delay = 1
+    else:
+       delay = int(delay)
+    if nr == '':
+       nr = 1
+    else:
+       nr = int(nr)
     subprocess.call("echo `pwd`>>succes", shell=True)
     if choice == 'ping':
        processText = ping(ip, delay, nr)
     if choice == 'tcp':
 	   processText = tcpping(ip, port, delay, nr)
-    if choice == 'arp'
+    if choice == 'arp':
        processText = arp(ip, delay, nr)
-        if port != '':
+       if port != '':
 	       port = int(port)
 	       processText = tcpping(ip, port)
     if choice == 'arp':

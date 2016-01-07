@@ -2,7 +2,7 @@
 from time import sleep
 from scapy.all import *
 
-def ping(ip, delay = 1, nr = 1):
+def ping(ip, delay, nr):
 
   TIMEOUT = 2
   conf.verb = 0

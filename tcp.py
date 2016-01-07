@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from time import sleep
 from scapy.all import *
-def tcpping(ip, port, delay = 1, nr = 1):
+def tcpping(ip, port, delay, nr):
   TIMEOUT = 2
   conf.verb = 0
   for num in range(0, nr):
