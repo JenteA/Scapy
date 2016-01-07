@@ -3,14 +3,15 @@ from time import sleep
 from scapy.all import *
 
 def ping(ip, delay, nr):
-
   TIMEOUT = 2
+  rep=[]
   conf.verb = 0
-  for num in range(0, nr):
+  for num in range(nr):
     packet = IP(dst=ip, ttl=20)/ICMP()
     reply = sr1(packet, timeout=TIMEOUT)
     if not (reply is None):
-  	  return reply.src, "is online"
+  	  rep[num-1] = reply.src, "is online"
     else:
-  	  return "Timeout waiting for %s" % packet[IP].dst
+  	  rep[num-1] = "Timeout waiting for %s" % packet[IP].dst
     sleep(delay)
+    return rep
