@@ -7,10 +7,8 @@ def tcpping(ip, port, delay, nr):
   conf.verb = 0
   for num in range(nr):
       packet = IP(dst=ip, ttl=20)/TCP(dport=port)
-      reply = sr1(packet, timeout=TIMEOUT)
-      if not (reply is None):
-         rep[num-1] reply.src, "is online"
-      else:
-         rep[num-1] "Timeout waiting for %s" % packet[IP].dst
-      sleep(delay)
+      ans, unans = srloop(packet, timeout=TIMEOUT, count=nr, inter=delay)
+      for num in range(nr):
+         reply = packet[IP].dst, "is send"
+         rep.append(reply)
       return rep

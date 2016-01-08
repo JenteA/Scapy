@@ -43,14 +43,14 @@
                         <option value="arp">Arp</option>
                         <option value="tcp">TCP</option>
                     </select><br/>
-                    <input name="delay" type="text" placeholder="delay"></input><br/>
+                    <input name="delay" type="text" placeholder="delay in seconden"></input><br/>
                     <input name="nr" type="text" placeholder="Aantal pakketjes"></input>
                     </br>
                     </br>
                     <button type="Submit" class="btn btn-lg btn-primary">Verstuur!</button>
                 </form>
                 {% for i in processText %}
-                    {{i}}
+                    {{i}}<br/>
                 {% endfor %}
             </div>
         </main>

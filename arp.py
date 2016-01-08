@@ -1,16 +1,12 @@
 #!/usr/bin/python
-from time import sleep
 from scapy.all import *
 def arp(ip, delay, nr):
   TIMEOUT = 2
   conf.verb = 0
   rep=[]
+  packet = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip)
+  ans, unans = srploop(packet, timeout=TIMEOUT, iface="eth0", count=nr, inter=delay)
   for num in range(nr):
-       packet = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip)
-       reply, unreply = srp(packet, timeout=TIMEOUT, iface="eth0")
-       if len(reply) > 0:
-          rep[num-1] = reply[0][0].getlayer(ARP).pdst, "is online"
-       else:
-          rep[num-1] = "Timeout waiting for %s" % packet[ARP].pdst
-  sleep(delay) 
+      reply = packet[ARP].pdst, "is send"
+      rep.append(reply)   
   return rep

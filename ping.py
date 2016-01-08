@@ -6,12 +6,9 @@ def ping(ip, delay, nr):
   TIMEOUT = 2
   rep=[]
   conf.verb = 0
+  packet = IP(dst=ip, ttl=20)/ICMP()
+  ans, unans = srloop(packet, timeout=TIMEOUT, count=nr, inter=delay)
   for num in range(nr):
-    packet = IP(dst=ip, ttl=20)/ICMP()
-    reply = sr1(packet, timeout=TIMEOUT)
-    if not (reply is None):
-  	  rep[num-1] = reply.src, "is online"
-    else:
-  	  rep[num-1] = "Timeout waiting for %s" % packet[IP].dst
-    sleep(delay)
-    return rep
+      reply = packet[IP].dst, "packet is send"	
+      rep.append(reply)
+  return rep
