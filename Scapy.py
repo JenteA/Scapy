@@ -49,5 +49,5 @@ def my_form_post():
     return render_template("index.html", processText=processText)
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run(host='0.0.0.0')
