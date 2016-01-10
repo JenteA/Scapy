@@ -1,5 +1,4 @@
 #!/usr/bin/python
-from time import sleep
 from scapy.all import *
 
 def ping(ip, delay, nr):

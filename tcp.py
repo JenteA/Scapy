@@ -1,5 +1,4 @@
 #!/usr/bin/python
-from time import sleep
 from scapy.all import *
 def tcpping(ip, port, delay, nr):
   TIMEOUT = 2
