@@ -28,11 +28,7 @@ We hebben voor dit project gekozen omdat het een uitdaging ging vormen. We hadde
 >>[2.2.1. SetCapabilities](#SetCap)<br/>
 >>[2.2.2. Start applicatie bij opstarten](#pythonOnBoot)
 
-<<<<<<< HEAD
 [3. Gebruiksinstructies](#deploy)
-=======
-[3. Het project deployen](#deploy)
->>>>>>> 7cd8aeb624c9af6ed4d9cca9f6eb661661a1aa1b
 
 [4. Conclusie](#Conclusie)
 
@@ -87,6 +83,19 @@ Het biedt daarentegen wel veel extensies die je kan gebruiken, om je web applica
 Flask is ook volledig open source. Om de werking beter te begrijpen biedt het Flask Core team je de kans om de source code eens te bekijken. Je kan, indien je dit wil, dus ook meebouwen aan Flask. Er wordt altijd al gestimuleerd om, indien je bugs vindt, deze zo snel mogelijk te rapporteren.
 
 ####<a id="ScapyPy"></a>2.1.2.1. Scapy.py
+
+Scapy.py is het script dat we aanroepen via de website. Het integreert alle scripts die we hebben (tcp, ping en arp) in 1 script zodat we makkelijk een pakket kunnen versturen vanuit 1 locatie.
+
+<img src="screenshots/AllScripts.png"/>
+
+Het script herkent dus om mee te beginnen, het type pakket dat je zal versturen. De data die hij nodig heeft, haalt hij uit de website via de POST methode.
+
+Scapy.py gaat dan het pakket volledig opbouwen. Hij vult alle instellingen in (ofwel de gegeven instelling via de website, ofwel de standaard instellingen die wij hebben ingesteld). Als hij alle waarden heeft ingevuld, zal hij aan de hand van welk pakket en je wil sturen, één van de if structuren aanspreken.
+
+<img src="screenshots/PacketChoice.png"/>
+
+Hij zal op de website ook laten zien hoeveel van de pakketjes al dien niet succeslvol zijn verstuurd en ontvangen.
+
 ####<a id="Jinja2"></a>2.1.2.2. Jinja2
 ####<a id="Werkzeug"></a>2.1.2.3. Werkzeug
 
@@ -100,3 +109,9 @@ Raspbian is een free software gebaseerd op Debian, geoptimaliseerd om te werken 
 
 #<a id="deploy"></a>3 Gebruiksinstructies
 #<a id="Conclusie"></a>4 Conclusie
+
+We hebben enorm veel geleerd van dit project. Niet alleen Python, maar ook Linux. De extra programmeertaal waar we nu van hebben geproefd, smaakt naar meer en is zeer gemakkelijk te gebruiken. Ook het doorsturen van data van HTML naar Python is handig om te weten.
+
+Het is spijtig dat dit project ten einde is, we hadden hier graag nog verder mee geëxperimenteerd om te kijken of we nog meer soorten pakketen en meer instellingen konden genereren voor de pakket generator. 
+
+Wij zijn er zeker van dat een project als dit de eerstejaars kan helpen om hun ontwikkeling van packet sniffing verder uit te breiden.
