@@ -23,7 +23,7 @@ We hebben voor dit project gekozen omdat het een uitdaging ging vormen. We hadde
 
 >[2.2. Raspbian](#raspbian)</br>
 
-[3. CodeGenie deployen](#deploy)
+[3. Het project deployen](#deploy)
 
 [4. Conclusie](#Conclusie)
 
