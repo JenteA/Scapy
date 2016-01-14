@@ -28,12 +28,7 @@ We hebben voor dit project gekozen omdat het een uitdaging ging vormen. We hadde
 >>[2.2.1. SetCapabilities](#SetCap)<br/>
 >>[2.2.2. Start applicatie bij opstarten](#pythonOnBoot)
 
-<<<<<<< HEAD
-[3. Gebruiksinstructies](#deploy)
-=======
-[3. Het project deployen](#deploy)
->>>>>>> 7cd8aeb624c9af6ed4d9cca9f6eb661661a1aa1b
-
+[3. Gebruiksinstructies](#deploy)<br/>
 [4. Conclusie](#Conclusie)
 
 #<a id="Inleiding"></a>1. Inleiding
