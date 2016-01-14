@@ -98,21 +98,41 @@ Hij zal op de website ook laten zien hoeveel van de pakketjes al dien niet succe
 
 ####<a id="Jinja2"></a>2.1.2.2. Jinja2
 
-Jinja wordt gebruikt door Python om templates te creëeren en wordt gepubliceerd onder de BSD licentie. Het maakt gebruikt Python expressies. Het is een text gebaseerde template taal en kan dus worden gebruikt om elke mark-up alsook source code te schrijven.
+Jinja wordt gebruikt door Flask om templates te creëeren en wordt gepubliceerd onder de BSD licentie. Het maakt gebruik van template designer helpers zodat er een aantal taken vergemakkelijkt worden bij het templating. Het is een text gebaseerde template taal en kan dus worden gebruikt om elke mark-up alsook source code te schrijven. Het is ook een veilig systeem want het maakt gebruik van site cross scripting prevention technieken om dit XSS te voorkomen.
 
 Je kan Jinja ook gebruikt om functies aan te roepen, met argument. Je kan je filters en tags customizen zodat je heel de engine kan gebruiken naar je eigen zin.
 
 ####<a id="Werkzeug"></a>2.1.2.3. Werkzeug
 
+Werzeug is een WSGI(WebServer Gateway Interface). Dit is een specificatie voor web servers en web applicaties. Nieuwe gebruikers van Python hadden vroeger veel problemen met het gebruik van frameworks voor Python omdat deze de keuze van web servers verminderde, met het gebruik van WSGI werd dit probleem opgelost.
+
+Werkzeug was een simpele collectie van verschillende WSGI applicaties maar is tegenwoordig één van de meest geavanceerde WSGI tool bechikbaar. Het bevat onderandere een krachtige debugger, een routing systeem, een systeem voor cookies te beheren, een fileuploader en cache control.
+
 ##<a id="Rasbian"></a>2.2. Raspbian
 
 Raspbian is een free software gebaseerd op Debian, geoptimaliseerd om te werken op de architecturen voor de Raspberry Pi. Raspbian voorziet ook 35000 ‘packages’ om te installeren, waardoor je applicaties makkelijker kan maken en ondersteunen. Hoewel Raspbian gereleased is in 2012, worden er nog altijd ‘packages’ gemaakt of ‘vertaald’ van Debian, om de ondersteuning nog groter te maken. Omdat Raspbian gebaseerd is op Debian en Debian niet zo moeilijk is om mee te werken en zeer stabiel is, is dit een zeer goed besturingssysteem voor onze web applicatie.
 
-###<a id="SetCap"></a>2.2.1. SetCapabilities
+###<a id="SetCap"></a>2.2.1. Set Capabilities
+
+Omdat we root rechten nodig hebben om paketten via de Scapy library door te sturen zouden studenten onze webapplicatie niet kunnen gebruiken omdat ze dan ook alles kunnnen aanpassen in Raspbian. Om dit te kunnen oplossen bestaat er een functie set capabilities in het libcap paket voor Rasbian. Dit stelt gebruikers instaat om bepaalde programma's te gebruiken zonder dat daar root rechten voor nodig zijn. Hieronder wordt uitgelegd hoe set capabilities werkt.
+
+![Set capabilities](screenshots/setCap.png)
+
+Met het `sudo chown infadm:infsex /usr/bin/python_netraw` commando gaan we `python_netraw` een nieuwe eigenaar geven `infadm` en aan een nieuwe groep toevoegen `infsec`. Met het commando `sudo chmod 770 /usr/bin/python_netraw` gaan we de eigenaar en de groep alle rechten geven om `python_netraw` te lezen, te wijzigen en uitvoeren. Dit zorgt ervoor dat niet zomaar iedereen `python_netraw` kan uitvoeren. Via het commando `sudo usermod pi -g infsec` gaan we de pi gebruiker toevoegen aan de groep infsec, zodat de pi gebruiker `python_netraw` kan uitvoeren. Via het commando `sudo setcap cap_net_raw=eip /usr/bin/python_netraw` gaan we ervoor zorgen dat python_netraw kan uitgevoerd worden zonder dat er root rechten voor nodig zijn maar enkel door de eigenaar of door de groep, waardoor er geen sudo rechten gegeven moet worden aan studenten om zo het systeem beter te beveiligen tegen opzettelijke vandalisering van het systeem.
 
 ###<a id="pythonOnBoot"></a>2.2.2. Start applicatie bij opstarten
 
+Om onze webapplicatie te kunnen opstarten als Raspbian boot en om alles klaar te maken voor productie heb ik een nieuwe gebruiker aangemaakt Scapy die geen sudo rechten heeft en deze toegevoegd aan de groep infsec. Daarna heb ik alles gekopieerd naar de home folder van de Scapy gebruiker en ervoor gezorgd dat de bestanden van onze webapplicatie beveiligd zijn tegen wijzigen. Daarna heb ik `python_netraw /home/Scapy/Scapy/Scpay.py &` toegevoegd aan ~/.profile. het & teken zorgt ervoor dat python_netraw gestart wordt in de achtergrond.
+
 #<a id="deploy"></a>3 Gebruiksinstructies
+
+Om onze webapplicatie te gebruiken moet je enkele stappen doorlopen:<br/>
+1. De Raspberry Pi aanzetten met een netwerkkabel aangesloten. <br/>
+2. Het IP adres van je ethernet aansluiting wijzigen naar `192.168.137.13` via Configuratiescherm >          Netwerkcentrum > Adaper instellingen wijzigen > rechtermuisklik op Lan-verbinding > Eigenschappen > Internet protocol versie 4 (TCP/IPv4) > Eigenschappen > Het volgende ip address gebruiken en bij IP-adres `192.168.137.13` invullen > bij subnetmasker klikken > op OK klikken en alles sluiten.<br/>
+3. Naar `192.168.137.13:5000` surfen.<br/>
+<img src="screenshots/Website.png" width="800"/></br>
+4. De juiste gegevens invullen en op de knop `verstuur!` klikken. <br/>
+
 #<a id="Conclusie"></a>4 Conclusie
 
 We hebben enorm veel geleerd van dit project. Niet alleen Python, maar ook Linux. De extra programmeertaal waar we nu van hebben geproefd, smaakt naar meer en is zeer gemakkelijk te gebruiken. Ook het doorsturen van data van HTML naar Python is handig om te weten.
