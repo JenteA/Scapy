@@ -28,12 +28,8 @@ We hebben voor dit project gekozen omdat het een uitdaging ging vormen. We hadde
 >>[2.2.1. SetCapabilities](#SetCap)<br/>
 >>[2.2.2. Start applicatie bij opstarten](#pythonOnBoot)
 
-<<<<<<< HEAD
 [3. Gebruiksinstructies](#deploy)
 
-=======
-[3. Gebruiksinstructies](#deploy)<br/>
->>>>>>> origin/master
 [4. Conclusie](#Conclusie)
 
 #<a id="Inleiding"></a>1. Inleiding
@@ -101,6 +97,11 @@ Scapy.py gaat dan het pakket volledig opbouwen. Hij vult alle instellingen in (o
 Hij zal op de website ook laten zien hoeveel van de pakketjes al dien niet succeslvol zijn verstuurd en ontvangen.
 
 ####<a id="Jinja2"></a>2.1.2.2. Jinja2
+
+Jinja wordt gebruikt door Python om templates te creëeren en wordt gepubliceerd onder de BSD licentie. Het maakt gebruikt Python expressies. Het is een text gebaseerde template taal en kan dus worden gebruikt om elke mark-up alsook source code te schrijven.
+
+Je kan Jinja ook gebruikt om functies aan te roepen, met argument. Je kan je filters en tags customizen zodat je heel de engine kan gebruiken naar je eigen zin.
+
 ####<a id="Werkzeug"></a>2.1.2.3. Werkzeug
 
 ##<a id="Rasbian"></a>2.2. Raspbian
