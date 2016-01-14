@@ -122,7 +122,7 @@ Met het `sudo chown infadm:infsex /usr/bin/python_netraw` commando gaan we `pyth
 
 ###<a id="pythonOnBoot"></a>2.2.2. Start applicatie bij opstarten
 
-Om onze webapplicatie te kunnen opstarten als Raspbian boot en om alles klaar te maken voor productie heb ik een nieuwe gebruiker aangemaakt Scapy die geen sudo rechten heeft en deze toegevoegd aan de groep infsec. Daarna heb ik alles gekopieerd naar de home folder van de Scapy gebruiker en ervoor gezorgd dat de bestanden van onze webapplicatie beveiligd zijn tegen wijzigen. Daarna heb ik `python_netraw /home/Scapy/Scapy/Scpay.py &` toegevoegd aan ~/.profile. het & teken zorgt ervoor dat python_netraw gestart wordt in de achtergrond.
+Om onze webapplicatie te kunnen opstarten als Raspbian boot en om alles klaar te maken voor productie heb ik een nieuwe gebruiker aangemaakt Scapy die geen sudo rechten heeft en deze toegevoegd aan de groep infsec. Daarna heb ik alles gekopieerd naar de home folder van de scapy gebruiker en ervoor gezorgd dat de bestanden van onze webapplicatie beveiligd zijn tegen wijzigen. Daarna heb ik `python_netraw /home/scapy/Scapy/Scpay.py &` toegevoegd aan ~/.profile. het & teken zorgt ervoor dat python_netraw gestart wordt in de achtergrond.
 
 #<a id="deploy"></a>3 Gebruiksinstructies
 
