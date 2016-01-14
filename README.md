@@ -20,20 +20,25 @@ We hebben voor dit project gekozen omdat het een uitdaging ging vormen. We hadde
 >>>[2.1.1.3. arp.py](#ARP)</br>
 
 >>[2.1.2. Flask](#Flask)</br>
+>>>[2.1.2.1. Scapy.py](#ScapyPy)<br/>
+>>>[2.1.2.2. Jinja2](#Jinja2)<br/>
+>>>[2.1.2.2. Werkzeug](#Werkzeug)<br/>
 
 >[2.2. Raspbian](#raspbian)</br>
+>>[2.2.1. SetCapabilities](#SetCap)<br/>
+>>[2.2.2. Start applicatie bij opstarten](#pythonOnBoot)
 
-[3. CodeGenie deployen](#deploy)
+[3. Gebruiksinstructies](#deploy)
 
 [4. Conclusie](#Conclusie)
 
-#1. Inleiding
+#<a id="Inleiding"></a>1. Inleiding
 
 Het is een project dat op school kan gebruikt worden voor de 1ste jaars elektronica-ICT om zo hun packet sniffing skills te verbeteren. Er dient naar een website gesurft te worden, gehost op de Raspberry Pi en dan de juiste instellingen kiezen, wat met al een klein beetje netwerk kennis geen enkel probleem zou mogen zijn en dan sniffen maar.
 
 Op deze manier kan je heel gemakkelijk fictief data verkeer maken. Dit data verkeer kan je opvullen met elk pakketje dat je maar wilt. Zo is het ook heel makkelijk te controleren of je het goede pakket te pakken hebt!
 
-#2. Specificaties
+#<a id="Specificaties"></a>2. Specificaties
 
 We moesten werken met een Raspberry pi waar we Raspbian op geïnstalleerd hebben. Rasbian hebben we geïnstalleerd omdat deze Linux distributie gebasseerd is op Debian en omdat Debian gemakkelijk is om mee te leren werken en om mee te werken. We hebben Python gebruikt om de scripts mee te schrijven. Naast Python, hadden we dan ook de Scapy library nodig. Om de Scapy library te installeren hadden we nog een aantal andere programma's nodig waaronder: tcpdump, graphviz, imagemagick, python-gnuplot, python-crypto en python-pyx. Dez programma's worden gebruikt door Scapy om een aantal functies uit te voeren. Wij hebben namelijk enkel met tcpdump gewerkt om paketten te versturen, bewerken en te ontvangen. Daarnaast hadden we nog iets nodig om onze website mee op te bouwen. We hebben gekozen voor Flask, omdat Flask een Python framework is, konden we gemakkelijk onze scripts geschreven in Python laten uitvoeren door Flask, met het voordeel dat we geen data moesten gaan omvormen en rare dingen moesten doen in onze code om alles te laten werken. We gaan de componenten hieronder uitleggen, en dan toelichten hoe wij deze hebben gebruikt in ons project.
 
@@ -75,8 +80,19 @@ Flask is een micro web applicatie framework dat in Python is geschreven. Het wor
 
 Het biedt daarentegen wel veel extensies die je kan gebruiken, om je web applicatie extra features te geven. Indien je onze applicatie nog verder wil uitbreiden, zal Flask je daar genoeg opties voor geven.
 
-Flask is ook volledig open source. Om de werking beter te begrijpen biedt het Flask Core team je de kans om de source code eens te bekijken. Je kan, indien je dit wil, dus ook meebouwen aan Flask. Er wordt altijd al gestimuleerd om, indien je bugs vindt, deze zo snel mogelijk te rapporteren. 
+Flask is ook volledig open source. Om de werking beter te begrijpen biedt het Flask Core team je de kans om de source code eens te bekijken. Je kan, indien je dit wil, dus ook meebouwen aan Flask. Er wordt altijd al gestimuleerd om, indien je bugs vindt, deze zo snel mogelijk te rapporteren.
 
-##<a id="Rasbian"></a>2.2 Raspbian
+####<a id="ScapyPy"></a>2.1.2.1. Scapy.py
+####<a id="Jinja2"></a>2.1.2.2. Jinja2
+####<a id="Werkzeug"></a>2.1.2.3. Werkzeug
+
+##<a id="Rasbian"></a>2.2. Raspbian
 
 Raspbian is een free software gebaseerd op Debian, geoptimaliseerd om te werken op de architecturen voor de Raspberry Pi. Raspbian voorziet ook 35000 ‘packages’ om te installeren, waardoor je applicaties makkelijker kan maken en ondersteunen. Hoewel Raspbian gereleased is in 2012, worden er nog altijd ‘packages’ gemaakt of ‘vertaald’ van Debian, om de ondersteuning nog groter te maken. Omdat Raspbian gebaseerd is op Debian en Debian niet zo moeilijk is om mee te werken en zeer stabiel is, is dit een zeer goed besturingssysteem voor onze web applicatie.
+
+###<a id="SetCap"></a>2.2.1. SetCapabilities
+
+###<a id="pythonOnBoot"></a>2.2.2. Start applicatie bij opstarten
+
+#<a id="deploy"></a>3 Gebruiksinstructies
+#<a id="Conclusie"></a>4 Conclusie
