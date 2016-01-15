@@ -40,7 +40,7 @@ Op deze manier kan je heel gemakkelijk fictief data verkeer maken. Dit data verk
 
 #<a id="Specificaties"></a>2. Specificaties
 
-We moesten werken met een Raspberry pi waar we Raspbian op geïnstalleerd hebben. Rasbian hebben we geïnstalleerd omdat deze Linux distributie gebasseerd is op Debian en omdat Debian gemakkelijk is om mee te leren werken en om mee te werken. We hebben Python gebruikt om de scripts mee te schrijven. Naast Python, hadden we dan ook de Scapy library nodig. Om de Scapy library te installeren hadden we nog een aantal andere programma's nodig waaronder: tcpdump, graphviz, imagemagick, python-gnuplot, python-crypto en python-pyx. Dez programma's worden gebruikt door Scapy om een aantal functies uit te voeren. Wij hebben namelijk enkel met tcpdump gewerkt om paketten te versturen, bewerken en te ontvangen. Daarnaast hadden we nog iets nodig om onze website mee op te bouwen. We hebben gekozen voor Flask, omdat Flask een Python framework is, konden we gemakkelijk onze scripts geschreven in Python laten uitvoeren door Flask, met het voordeel dat we geen data moesten gaan omvormen en rare dingen moesten doen in onze code om alles te laten werken. We gaan de componenten hieronder uitleggen, en dan toelichten hoe wij deze hebben gebruikt in ons project.
+We moesten werken met een Raspberry pi waar we Raspbian op geïnstalleerd hebben. Rasbian hebben we geïnstalleerd omdat deze Linux distributie gebasseerd is op Debian en omdat Debian gemakkelijk is om mee te leren werken en om mee te werken. We hebben Python gebruikt om de scripts mee te schrijven. Naast Python, hadden we dan ook de Scapy library nodig. Om de Scapy library te installeren hadden we nog een aantal andere programma's nodig waaronder: tcpdump, graphviz, imagemagick, python-gnuplot, python-crypto en python-pyx. Dez programma's worden gebruikt door Scapy om een aantal functies uit te voeren. Wij hebben namelijk enkel met tcpdump gewerkt om pakketten te versturen, bewerken en te ontvangen. Daarnaast hadden we nog iets nodig om onze website mee op te bouwen. We hebben gekozen voor Flask, omdat Flask een Python framework is, konden we gemakkelijk onze scripts geschreven in Python laten uitvoeren door Flask, met het voordeel dat we geen data moesten gaan omvormen en rare dingen moesten doen in onze code om alles te laten werken. We gaan de componenten hieronder uitleggen, en dan toelichten hoe wij deze hebben gebruikt in ons project.
 
 ##<a id="Python"></a>2.1. Python
 
@@ -50,7 +50,7 @@ Voor Python bestaan er ook vele libraries die je gratis kan downloaden voor data
 
 ###<a id="Scapy"></a>2.1.1. Scapy
 
-Scapy is een pakket-manipulatie-tool geschreven in Python waarmee je paketten kan versturen, wijzigen, ontvangen. Je kan er ook aanvallen mee opzetten, traceroutes mee doen en nog veel meer. Wij gebruiken Scapy enkel om paketten mee te verzenden. Scapy wordt ook veel gebruik om veiligheid van netwerken mee te testen, of van een computer.
+Scapy is een pakket-manipulatie-tool geschreven in Python waarmee je pakketten kan versturen, wijzigen, ontvangen. Je kan er ook aanvallen mee opzetten, traceroutes mee doen en nog veel meer. Wij gebruiken Scapy enkel om pakketten mee te verzenden. Scapy wordt ook veel gebruik om veiligheid van netwerken mee te testen, of van een computer.
 
 Een nadeel daarentegen is dat het Scapy niet snel is in het uitwisselen van data. Dit komt deels door het feit dat het in Python is geschreven. Wij hebben hier nu relatief weinig last van gehad omdat we met heel lichte en simpele scriptjes hebben gewerkt.
 
@@ -76,7 +76,7 @@ met `ans, unans = srploop(packet, timeout=TIMEOUT, iface="eth0", count=nr, inter
 
 ###<a id="Flask"></a>2.1.2. Flask
 
-Flask is een micro web applicatie framework dat in Python is geschreven. Het wordt zo genoemd omdat je er geen specifieke tool op library voor nodig hebt om het te laten werken. Als gebruiker van Flask ben je dus volledig vrijstaand welke tools en libraries je gaat gebruiken om je web applicatie mee te maken
+Flask is een micro web applicatie framework dat in Python is geschreven. Het wordt zo genoemd omdat je er geen specifieke tool of library voor nodig hebt om het te laten werken. Als gebruiker van Flask ben je dus volledig vrijstaand welke tools en libraries je gaat gebruiken om je web applicatie mee te maken
 
 Het biedt daarentegen wel veel extensies die je kan gebruiken, om je web applicatie extra features te geven. Indien je onze applicatie nog verder wil uitbreiden, zal Flask je daar genoeg opties voor geven.
 
@@ -114,7 +114,7 @@ Raspbian is een free software gebaseerd op Debian, geoptimaliseerd om te werken 
 
 ###<a id="SetCap"></a>2.2.1. Set Capabilities
 
-Omdat we root rechten nodig hebben om paketten via de Scapy library door te sturen zouden studenten onze webapplicatie niet kunnen gebruiken omdat ze dan ook alles kunnnen aanpassen in Raspbian. Om dit te kunnen oplossen bestaat er een functie set capabilities in het libcap paket voor Rasbian. Dit stelt gebruikers instaat om bepaalde programma's te gebruiken zonder dat daar root rechten voor nodig zijn. Hieronder wordt uitgelegd hoe set capabilities werkt.
+Omdat we root rechten nodig hebben om pakketten via de Scapy library door te sturen zouden studenten onze webapplicatie niet kunnen gebruiken omdat ze dan ook alles kunnnen aanpassen in Raspbian. Om dit te kunnen oplossen bestaat er een functie set capabilities in het libcap pakket voor Rasbian. Dit stelt gebruikers instaat om bepaalde programma's te gebruiken zonder dat daar root rechten voor nodig zijn. Hieronder wordt uitgelegd hoe set capabilities werkt.
 
 ![Set capabilities](screenshots/setCap.png)
 
