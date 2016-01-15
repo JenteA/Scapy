@@ -61,7 +61,7 @@ Een hele goede guide voor Scapy is [The Very Unofficial Dummies Guide To Scapy](
 
 Met `packet = IP(dst=ip, ttl=20)/ICMP()`<br/> gaan we het pakket opbouwen. Het is een IP pakket met een destination address gelijk aan de waarde in de ip variabele, een time to live van 20 hops en we hangen aan het ip pakket ook een ICMP pakket voor de ping te versturen.<br/>
 Met `ans, unans = srloop(packet, timeout=TIMEOUT, count=nr, inter=delay)`
-gaan we het pakket in een layer 3 loop steken. We geven ook een count mee, deze waarde wordt gebruikt om te definiëren hoeveel pakketen er verstuurd moeten worden, als er niets is ingevuld dan wordt het pakket een oneindig aantal keer verzonden. met `inter=delay` geven we mee hoeveel tijd er tussen de pakketen moet zitten. De loop kan twee antwoorden krijgen ofwel is het pakket beantwoord ofwel is de timeout verstereken.
+gaan we het pakket in een layer 3 loop steken. We geven ook een count mee, deze waarde wordt gebruikt om te definiëren hoeveel pakketten er verstuurd moeten worden, als er niets is ingevuld dan wordt het pakket een oneindig aantal keer verzonden. met `inter=delay` geven we mee hoeveel tijd er tussen de pakketten moet zitten. De loop kan twee antwoorden krijgen, ofwel is het pakket beantwoord ofwel is de timeout verstreken.
 
 ####<a id="TCP"></a>2.1.1.2. tcp.py
 ![tcp.py](screenshots/tcpScript.png)
