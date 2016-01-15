@@ -108,7 +108,7 @@ Werzeug is een WSGI(WebServer Gateway Interface). Dit is een specificatie voor w
 
 Werkzeug was een simpele collectie van verschillende WSGI applicaties maar is tegenwoordig één van de meest geavanceerde WSGI tool bechikbaar. Het bevat onderandere een krachtige debugger, een routing systeem, een systeem voor cookies te beheren, een fileuploader en cache control.
 
-##<a id="Rasbian"></a>2.2. Raspbian
+##<a id="Raspbian"></a>2.2. Raspbian
 
 Raspbian is een free software gebaseerd op Debian, geoptimaliseerd om te werken op de architecturen voor de Raspberry Pi. Raspbian voorziet ook 35000 ‘packages’ om te installeren, waardoor je applicaties makkelijker kan maken en ondersteunen. Hoewel Raspbian gereleased is in 2012, worden er nog altijd ‘packages’ gemaakt of ‘vertaald’ van Debian, om de ondersteuning nog groter te maken. Omdat Raspbian gebaseerd is op Debian en Debian niet zo moeilijk is om mee te werken en zeer stabiel is, is dit een zeer goed besturingssysteem voor onze web applicatie.
 
