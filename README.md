@@ -24,7 +24,7 @@ We hebben voor dit project gekozen omdat het een uitdaging ging vormen. We hadde
 >>>[2.1.2.2. Jinja2](#Jinja2)<br/>
 >>>[2.1.2.2. Werkzeug](#Werkzeug)<br/>
 
->[2.2. Raspbian](#raspbian)</br>
+>[2.2. Raspbian](#Raspbian)</br>
 >>[2.2.1. SetCapabilities](#SetCap)<br/>
 >>[2.2.2. Start applicatie bij opstarten](#pythonOnBoot)
 
